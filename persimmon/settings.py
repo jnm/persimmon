@@ -130,3 +130,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # OpenID Connect
 OIDC_USERINFO = 'persimmon.oidc_provider_settings.userinfo'
+LOGOUT_SECONDS_AFTER_OIDC_AUTHORIZE = 15
