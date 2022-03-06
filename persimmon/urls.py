@@ -25,11 +25,16 @@ from oidc_provider import views as oidc_views
 
 def oops(request, *args, **kwargs):
     return HttpResponse(
-        f'Hello, {request.user}. '
-        "I'm just an authentication provider. You probably meant to go to an "
-        "application that connects with me. If you're trying to administer "
-        "users, go to /admin/.",
-        content_type='text/plain'
+        '<html><body>'
+        f'<p>Hello, {request.user}.</p>'
+        "<p>I'm just an authentication provider. You probably meant to go to "
+        'an application that connects with me.</p>'
+        "<p>If you'd like to change your password, "
+        '<a href="/accounts/password_change">click here</a>.</p>'
+        "<p>If you're trying to administer users, go to "
+        '<a href="/admin/">/admin/</a>.</p>'
+        '</body></html>',
+        content_type='text/html'
     )
 
 def authorize_wrapper(request, *args, **kwargs):
